@@ -2,7 +2,7 @@
   "name": "gallery",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gabrielcmoraru.github.io/keepthinking.gallery",
+  "homepage": "https://gabrielcmoraru.github.io/",
   "dependencies": {
     "eslint-config-airbnb": "^16.1.0",
     "gh-pages": "^1.2.0",
