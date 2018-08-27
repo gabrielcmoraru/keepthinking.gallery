@@ -23,7 +23,7 @@ const News = () => (
             <CardContent>
               {event.content}
             </CardContent>
-           </Card>),
+          </Card>),
         )
       }
     </NewsCards>
@@ -80,7 +80,7 @@ const NewsSelection = styled.button`
 const NewsCards = styled.div`
   display: grid;
   margin 0 5% 0 5%;
-  grid-template-columns: repeat(auto-fill, 330px);
+  grid-template-columns: repeat(auto-fit, 330px);
   justify-content: space-between;
   padding: 0 0 2em;
   @media (max-width: 1226px) {
