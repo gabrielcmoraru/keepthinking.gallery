@@ -15,7 +15,7 @@ const Artists = () => (
         {artistNames.map(artist => <ArtistName key={artist.toString()}><a href="/">{artist}</a></ArtistName>)}
       </ArtistList>
       <ArtistImagePreview>
-        <Img src={missingImg} alt="Artist Image Preview"/>
+        <Img src={missingImg} alt="Artist Image Preview" />
       </ArtistImagePreview>
     </ArtistMenu>
   </Section>
@@ -98,10 +98,16 @@ const ArtistName = styled.li`
 `;
 
 const ArtistImagePreview = styled.div`
-  flex:1;
+  flex: 1;
+  text-align: right;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Img = styled.img`
+  max-width: 250px;
+  min-width: 160px;
   width: 100%;
   height: auto;
 `;

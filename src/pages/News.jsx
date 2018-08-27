@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import eventOne from 'assets/event1.png';
-import eventTwo from 'assets/event2.png';
-import eventThree from 'assets/event3.png';
+import Data from 'assets/events.js';
 
 const News = () => (
   <Section role="region">
@@ -11,59 +9,23 @@ const News = () => (
       <NewsSelection type="button">View all</NewsSelection>
     </NewsHeader>
     <NewsCards>
-      <Card>
-        <Img src={eventOne} alt="Event 1" />
-        <CardTitle>
-          <a href="/">
-          Exhibition: He Xiangyu monograph released by Distanz
-          </a>
-        </CardTitle>
-        <CardDate>
-        From March 2016
-        </CardDate>
-        <CardContent>
-        He Xiangyu and Liu Wei are among
-        74 international artists from 33
-        countries chosen to feature in the
-        Yinchuan Biennale 2016
-        </CardContent>
-      </Card>
-      <Card>
-        <Img src={eventTwo} alt="Event 2" />
-        <CardTitle>
-          <a href="/">
-          Exhibition: Runa Islam at SFMOMA, San Francisco
-          </a>
-        </CardTitle>
-        <CardDate>
-        From March 2016
-        </CardDate>
-        <CardContent>
-        ‘Verso’, SFMOMA’s solo
-        presentation of Bangladeshi-born
-        British artist Runa Islam, features
-        the US premiere of Cabinet of
-        Prototypes (2009-10)
-        </CardContent>
-      </Card>
-      <Card>
-        <Img src={eventThree} alt="Event 3" />
-        <CardTitle>
-          <a href="/">
-          Preview: White Cube Mason’s Yard
-          </a>
-        </CardTitle>
-        <CardDate>
-        19 January 2017, 6 to 8pm
-        </CardDate>
-        <CardContent>
-        Join us at Mason's Yard, London for
-        the preview of the new Park Seo-Bo
-        exhibition curated by Katharine
-        Kostyál. Curated by Katharine
-        Kostyál
-        </CardContent>
-      </Card>
+      { Data.events.map(event =>
+          (<Card key={event.id}>
+            <Img src={event.image} alt={event.name} />
+            <CardTitle>
+              <a href="/">
+                {event.title}
+              </a>
+            </CardTitle>
+            <CardDate>
+              {event.date}
+            </CardDate>
+            <CardContent>
+              {event.content}
+            </CardContent>
+           </Card>),
+        )
+      }
     </NewsCards>
   </Section>
 );
@@ -120,7 +82,10 @@ const NewsCards = styled.div`
   margin 0 5% 0 5%;
   grid-template-columns: repeat(auto-fill, 330px);
   justify-content: space-between;
-  padding: 0 0 2em 0;
+  padding: 0 0 2em;
+  @media (max-width: 1226px) {
+    justify-content: space-around;
+  }
 `;
 
 const Card = styled.div`

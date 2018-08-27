@@ -7,10 +7,10 @@ const Home = () => (
     <Main>
       <Img src={hero} alt="Gallery presentation picture" />
       <ImgChanger>
-        <Dot><a href="#" /></Dot>
-        <Dot><a href="#" /></Dot>
-        <Dot><a href="#" /></Dot>
-        <Dot><a href="#" /></Dot>
+        <Dot><a href="/" aria-label="pic 1" /></Dot>
+        <Dot><a href="/" aria-label="pic 2" /></Dot>
+        <Dot><a href="/" aria-label="pic 3" /></Dot>
+        <Dot><a href="/" aria-label="pic 4" /></Dot>
       </ImgChanger>
       <Caption>
         <CaptionTitle>
